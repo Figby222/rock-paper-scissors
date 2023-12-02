@@ -1,0 +1,12 @@
+player chooses between rock, paper, or scissors
+computer chooses between rock, paper, or scissors
+if player chooses the same as computer, the computer rerolls
+if player chooses rock and computer chooses scissors, player wins
+if player chooses rock and computer chooses paper, player loses
+if player chooses paper and computer chooses rock, player wins
+if player chooses paper and computer chooses scissors, player loses
+if player chooses scissors and computer chooses paper, player wins
+if player chooses scissors and computer chooses rock, player loses
+
+
+

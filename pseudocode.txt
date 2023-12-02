@@ -1,0 +1,50 @@
+FUNCTION getPlayerChoice()
+    CREATE a string variable for choice
+    ASK the player if they want to choose rock, paper, or scissors, and store it in the choice variable
+    RETURN choice
+
+
+FUNCTION getComputerChoice()
+    CREATE a string variable for choice
+    GET a random integer between 0 and 2 and assign it to a variable named rand
+    IF rand is 0
+        THEN choice is 'rock'
+    ELSE IF rand is 1
+        THEN choice is 'paper'
+    ELSE 
+        choice is 'scissors'
+    RETURN choice
+
+
+FUNCTION playRound(playerSelection, computerSelection)
+    CREATE a boolean variable called win
+    playerSelection is playerChoice()
+    computerSelection is computerChoice()
+    IF playerSelection is 'rock' AND computerSelection is 'scissors'
+        THEN RETURN 'win'
+    ELSE IF playerSelection is 'rock' AND computerSelection is 'paper'
+        THEN RETURN 'lose'
+    ELSE IF playerSelection is 'paper' AND computerSelection is 'rock'
+        THEN RETURN 'win'
+    ELSE IF playerSelection is 'paper' AND computerSelection is 'scissors'
+        THEN RETURN 'lose'
+    ELSE IF playerSelection is 'rock' AND computerSelection is 'scissors'
+        THEN RETURN 'win'
+    ELSE IF playerSelection is 'rock' AND computerSelection is 'paper'
+        THEN RETURN 'lose'
+    ELSE
+        tell player it's a tie
+        CALL playRound()
+
+FUNCTION game()
+    CREATE a number variable called roundsWon 
+    FOR 5 rounds
+        IF playRound() is 'win'
+            INCREMENT roundsWon
+            tell player they won this round
+        ELSE
+            tell player they lost this round
+    IF roundsWon is greater than 2
+        THEN tell player they won
+    ELSE
+        tell player they lost
