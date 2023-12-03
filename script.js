@@ -1,12 +1,11 @@
 // get input from computer
 function getComputerChoice() {
     let choice = '';
-    let rand = Math.floor(Math.random() * 3);
-    console.log(rand);
-    if (rand == 0) {
+    let int_rand = Math.floor(Math.random() * 3);
+    if (int_rand == 0) {
         choice = 'rock';
     }
-    else if (rand == 1) {
+    else if (int_rand == 1) {
         choice = 'paper';
     } else {
         choice = 'scissors';
@@ -50,15 +49,11 @@ function playRound(playerSelection, computerSelection) {
     }
 }
 
-
-// const playerSelection = "rock";
-// const computerSelection = getComputerChoice();
 function game() {
     let roundsWon = 0;
-    // i for rounds played
-    for (let i = 1; i<6; i++) {
-        let currentRound = playRound(getPlayerChoice(), getComputerChoice());
-        if (currentRound == 'win') {
+    for (let round = 1; round<6; round++) {
+        let currentRoundResult = playRound(getPlayerChoice(), getComputerChoice());
+        if (currentRoundResult == 'win') {
             roundsWon++;
             console.log("You won round ", i, "!");
         }
@@ -73,4 +68,5 @@ function game() {
         console.log("You lost the game!");
     }
 }
+
 game();
